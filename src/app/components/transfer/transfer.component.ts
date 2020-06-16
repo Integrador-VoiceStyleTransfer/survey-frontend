@@ -60,6 +60,7 @@ export class TransferComponent implements OnInit {
     this.error = null;
     var options = {
       mimeType: "audio/wav",
+      sampleRate: 16000,
       numberOfAudioChannels: 1,
     };
     this.stream = stream;
