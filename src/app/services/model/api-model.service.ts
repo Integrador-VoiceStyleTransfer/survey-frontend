@@ -8,16 +8,15 @@ import { Observable } from "rxjs";
 })
 export class ApiModelService {
   URL = "https://backendvst.tech";
-  PORT = "8000";
 
   constructor(private http: HttpClient) {}
 
   trasnferOnFire(data) {
-    return this.http.post(`${this.URL}:${this.PORT}/convert/`, data);
+    return this.http.post(`${this.URL}/convert/`, data);
   }
 
   healtCheck() {
-    return this.http.get(`${this.URL}:${this.PORT}`).subscribe((res) => {
+    return this.http.get(`${this.URL}`).subscribe((res) => {
       console.log(res);
       return res;
     });
