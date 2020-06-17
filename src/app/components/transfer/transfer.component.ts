@@ -131,7 +131,8 @@ export class TransferComponent implements OnInit {
       this.setModelResponse(
         response["content_url"],
         response["target_url"],
-        this.getNameFromId(response["target_id"])
+        this.getNameFromId(response["target_id"]),
+        0
       );
 
       if (!this.modelList) this.modelList = [];
@@ -156,7 +157,10 @@ export class TransferComponent implements OnInit {
     this.styleId = id;
   }
 
-  setModelResponse(content_url, target_url, name) {
+  setModelResponse(content_url, target_url, name, i) {
+    $("li").removeClass("selectedItem");
+    $(`#${i}`).addClass("selectedItem");
+    console.log(i);
     this.target_url = target_url;
     this.content_url = content_url;
     this.name = name;

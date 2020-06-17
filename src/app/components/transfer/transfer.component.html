@@ -169,8 +169,8 @@
           <h6 class="fs-subtitle text-center" style="display: inline-block;">Audios procesando: {{queue}}</h6>
           <img src="/assets/loading.gif" alt="loading" width="20%" *ngIf="processing" />
           <ul class="list-group">
-            <li class="list-group-item list-transfer" *ngFor="let item of modelList"
-              (click)="setModelResponse(item.content_url, item.target_url, item.name)">
+            <li class="list-group-item list-transfer" *ngFor="let item of modelList; let i = index "
+              (click)="setModelResponse(item.content_url, item.target_url, item.name,i)" attr.id="{{i}}">
               {{ item.name }}
             </li>
           </ul>
